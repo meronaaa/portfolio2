@@ -24,7 +24,7 @@
 #sidenav {
   background-color: #fff;
   color: #fff;
-  box-shadow: 5px 0px 15px #00000038;
+  box-shadow: 5px 0px 15px rgba(3, 1, 1, 0.45);
   z-index: 100;
 }
 
@@ -394,4 +394,133 @@ footer ul li span {
   margin: auto;
   line-height: 150px;
   background: rgb(211, 211, 211);
+}
+
+#loading-bg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+}
+
+#loading-bg .loading {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate (-50%, -50%);
+}
+
+#loading-bg .loading .circle {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 15px solid #337ab7;
+  animation: loading 2s infinite linear;
+}
+
+#loading-bg .loading>span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #337ab7;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+    border-color: #337ab7;
+  }
+  33% {
+    border-color: #32b867;
+  }
+  66% {
+    border-color: #a37fd1;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: #337ab7;
+  }
+}
+
+#loading-bg2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: hue-rotate(0deg);
+  background: linear-gradient(45deg, #0f8, #08f);
+  font-family: sans-serif;
+  z-index: 1000;
+  animation: hue 9s infinite;
+}
+
+#loading-bg2 .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150px;
+
+}
+
+#loading-bg2 h1 {
+  color: #fff;
+  letter-spacing: 10px;
+}
+
+#loading-bg2 .loading div {
+  width: 10px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  animation: load 1.5s infinite;
+}
+
+#loading-bg2 .loading .bar1 {
+  left: 40%;
+}
+
+#loading-bg2 .loading .bar2 {
+  left: 50%;
+  animation-delay: 0.1s;
+}
+
+#loading-bg2 .loading .bar3 {
+  left: 60%;
+  animation-delay: 0.2s;
+}
+
+
+/*위아래움직이기*/
+
+@keyframes load {
+  0% {transform: translate(0px,0px);}
+  33% {transform: translate(0px,24px);height: 10px;}
+  66% {transform: translate(0px,-16px);}
+  88% {transform: translate(0px,4px);}
+  100% {transform: translate(0px,0px);}
+}
+
+
+/*백그라운드 색상*/
+
+@keyframes hue {
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
 }
